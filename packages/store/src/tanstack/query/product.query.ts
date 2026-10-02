@@ -15,7 +15,8 @@ export const getProducts = () => {
 };
 export const getProductById = (id: string) => {
   return useQuery({
-    queryKey: [ProductKeys.productById],
+    queryKey: ProductKeys.productById(id),
     queryFn: () => api.get<IProduct>(`${API_ENDPOINTS.PRODUCTS}/${id}`),
+    enabled: !!id,
   });
 };
