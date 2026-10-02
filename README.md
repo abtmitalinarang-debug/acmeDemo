@@ -24,6 +24,29 @@ This Turborepo includes the following packages/apps:
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
+### Creating a New Next.js App
+
+You can generate a new Next.js app that mirrors the configuration of the existing Next.js apps (`product` / `website`):
+
+```sh
+# Interactive prompt:
+pnpm create-app
+
+# Directly specify the app name:
+pnpm create-app dashboard
+
+# With custom dev port or source template:
+pnpm create-app admin --port 3005 --from product
+```
+
+This command automatically:
+
+- Scaffolds the Next.js 16 (App Router + Turbopack) app inside `apps/<app-name>`
+- Configures `next.config.js`, `tsconfig.json`, `eslint.config.js`, `next-env.d.ts`, and `.gitignore`
+- Connects monorepo workspace dependencies (`@repo/ui`, `@repo/eslint-config`, `@repo/typescript-config`)
+- Automatically picks the next free development server port
+- Runs `pnpm install` so workspace dependencies link immediately
+
 ### Utilities
 
 This Turborepo has some additional tools already setup for you:

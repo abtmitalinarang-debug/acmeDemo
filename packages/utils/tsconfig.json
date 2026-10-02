@@ -5,8 +5,9 @@
     "strictNullChecks": true,
     "module": "esnext",
     "moduleResolution": "bundler",
-    "resolvePackageJsonImports": true
+    "resolvePackageJsonImports": true,
+    "types": ["node"]
   },
-  "include": ["src"],
+  "include": ["src", "*.ts", "*.tsx"],
   "exclude": ["node_modules", "dist"]
 }

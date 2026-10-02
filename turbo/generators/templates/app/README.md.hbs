@@ -1,0 +1,31 @@
+# {{ titleCase name }}
+
+This is a Next.js application in the Acme monorepo, generated with Turborepo generator (\`turbo gen app\`).
+
+## Configuration
+
+- **Framework**: Next.js 16 (App Router + Turbopack)
+- **React**: React 19
+- **Dev Port**: \`{{ port }}\`
+- **Shared Packages**:
+  - \`@repo/ui\`
+  - \`@repo/eslint-config\`
+  - \`@repo/typescript-config\`
+
+## Development
+
+Run from monorepo root:
+
+\`\`\`bash
+# Start dev server on port {{ port }}
+pnpm --filter {{ kebabCase name }} dev
+
+# Build production bundle
+pnpm --filter {{ kebabCase name }} build
+
+# Typecheck
+pnpm --filter {{ kebabCase name }} check-types
+
+# Lint
+pnpm --filter {{ kebabCase name }} lint
+\`\`\`
